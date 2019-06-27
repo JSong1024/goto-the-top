@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+  <style type="text/css">
+    .fix_bar_up{
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    .fix_bar_down{
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    .fix_bar_up > li{
+      width: 100px;
+      height: 100px;
+      background: url(data:image/png;base64,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) no-repeat 0 0;
+      background-size: 100% 90%;
+      background-position: center center;
+      background-color: rgba(0,0,0,.3);
+      cursor: pointer;
+      list-style: none;
+      border-radius: 10px;
+    }
+    .fix_bar_down > li{
+      width: 100px;
+      height: 100px;
+      background: url(data:image/png;base64,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) no-repeat 0 0;
+      background-size: 100% 90%;
+      background-position: center center;
+      background-color: rgba(0,0,0,.3);
+      cursor: pointer;
+      list-style: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>海燕</h3>
+  <p>
+  在苍茫的大海上，狂风卷集着乌云。在乌云和大海之间，海燕像黑色的闪电，在高傲地飞翔。
+  </p>
+  <p>
+  一会儿翅膀碰着波浪，一会儿箭一般地直冲向乌云，它叫喊着，──就在这鸟儿勇敢的叫喊声里，乌云听出了欢乐。
+  </p>
+  <p>
+  在这叫喊声里──充满着对暴风雨的渴望！在这叫喊声里，乌云听出了愤怒的力量、热情的火焰和胜利的信心。
+  </p>
+  <p>
+  海鸥在暴风雨来临之前呻吟着，──呻吟着，它们在大海上飞窜，想把自己对暴风雨的恐惧，掩藏到大海深处。
+  </p>
+  <p>
+  海鸭也在呻吟着，──它们这些海鸭啊，享受不了生活的战斗的欢乐：轰隆隆的雷声就把它们吓坏了。
+  </p>
+  <p>
+  蠢笨的企鹅，胆怯地把肥胖的身体躲藏到悬崖底下……只有那高傲的海燕，勇敢地，自由自在地，在泛起白沫的大海上飞翔！
+  </p>
+  <p>
+  乌云越来越暗，越来越低，向海面直压下来，而波浪一边歌唱，一边冲向高空，去迎接那雷声。
+  </p>
+  <p>
+  雷声轰响。波浪在愤怒的飞沫中呼叫，跟狂风争鸣。看吧，狂风紧紧抱起一层层巨浪，恶狠狠地把它们甩到悬崖上，把这些大块的翡翠摔成尘雾和碎末。
+  </p>
+  <p>
+  海燕叫喊着，飞翔着，像黑色的闪电，箭一般地穿过乌云，翅膀掠起波浪的飞沫。
+  </p>
+  <p>
+  看吧，它飞舞着，像个精灵，──高傲的、黑色的暴风雨的精灵，——它在大笑，它又在号叫……它笑那些乌云，它因为欢乐而号叫！
+  </p>
+  <p>
+  这个敏感的精灵，——它从雷声的震怒里，早就听出了困乏，它深信，乌云遮不住太阳，──是的，遮不住的！
+  </p>
+  <p>
+  狂风吼叫……雷声轰响……
+  </p>
+  <p>
+  一堆堆乌云，像青色的火焰，在无底的大海上燃烧。大海抓住闪电的箭光，把它们熄灭在自己的深渊里。这些闪电的影子，活像一条条火蛇，在大海里蜿蜒游动，一晃就消失了。
+  </p>
+  <p>
+  ——暴风雨！暴风雨就要来啦！
+  </p>
+  <p>
+  这是勇敢的海燕，在怒吼的大海上，在闪电中间，高傲地飞翔；这是胜利的预言家在叫喊：
+  </p>
+  <p>
+  ——让暴风雨来得更猛烈些吧！
+  </p>
+
+  <br/>
+
+  <h3>Песня о буревестнике</h3>
+  <p>
+  Над седой равниной моря ветер тучи собирает. Между тучами и морем гордо реет Буревестник,черной молнии подобный.
+  </p>
+  <p>
+  То крылом волны касаясь,то стрелой взмывая к тучам,он кричит,и ----тучи слышат радость в смелом крике птицы.
+  </p>
+  <p>
+  В этом крике ----жажда бури!Силу гнева，пламя страсти и уверенность в победе слышат тучи в этом крике.
+  </p>
+  <p>
+  Чайки стонут перед бурей,---- стонут,мечутся над морем и на дно его готовы спрятать ужас свой пред бурей.
+  </p>
+  <p>
+  И гагары тоже стонут,----им,гагарам,недоступно наслажденье битвой жизни： гром ударов их пугает.
+  </p>
+  <p>
+  Глупый пингвин робко прячет тело жирное в утесах…Только гордый Буревестник реет смело и свободно над седым от пены морем!
+  </p>
+  <p>
+  Все мрачней и ниже тучи опускаются над морем,и поют,и рвутся волны к высоте навстречу грому.
+  </p>
+  <p>
+  Гром грохочет. В пене гнева стонут волны，с ветром споря. Вот охватывает ветер стаи волн объятьем крепким и бросает их с размаху в дикой злобе на утесы，разбивая в пыль и брызги изумрудные громады.
+  </p>
+  <p>
+  Буревестник с криком реет,черной молнии подобный，как стрела пронзает тучи,пену волн крылом срывает.
+  </p>
+  <p>
+  Вот он носится,как демон,---- гордый,черный демон бури,---- и смеется,и рыдает… Он над тучами смеется,он от радости рыдает!
+  </p>
+  <p>
+  В гневе грома,---- чуткий демон,---- он давно усталость слышит,он уверен,что не скроют тучи солнца,---- нет,не скроют!
+  </p>
+  <p>
+  Ветер воет…Гром грохочет…
+  </p>
+  <p>
+  Синим пламенем пылают стаи туч над бездной моря. Море ловит стрелы молний и в своей пучине гасит. Точно огненные змеи，вьются в море，исчезая,отраженья этих молний.
+  </p>
+  <p>
+  - Буря! Скоро грянет буря!
+  </p>
+  <p>
+  Это смелый Буревестник гордо реет между молний над ревущим невно морем;то кричит пророк победы:
+  </p>
+  <p>
+  - Пусть сильнее грянет буря!…
+  </p>
+
+  <br/>
+
+  <ul class="fix_bar_up">
+    <li id="to_top" title="Go to the top" />
+  </ul>
+  <ul class="fix_bar_down">
+    <li id="to_bottom" title="Go to the bottom" />
+  </ul>
+</body>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+  function switchJumpButton() {
+    var scroll_top =  $(window).scrollTop();
+    var half_scroll_height = (document.body.offsetHeight - window.innerHeight + 16) / 2;
+
+    if(scroll_top > half_scroll_height){
+      $("#to_top").show();
+      $("#to_bottom").hide();
+    }else{
+      $("#to_top").hide();
+      $("#to_bottom").show();
+    }
+  }
+
+  function onOffJumpButton() {
+    var scroll_height = document.body.offsetHeight - window.innerHeight + 16;
+
+    if (scroll_height > 0) {
+      switchJumpButton();
+    } else {
+      $("#to_bottom").hide();
+      $("#to_top").hide();
+    }
+  }
+
+  $().ready(function() {
+    $("#to_top").click(function() {
+      $("html,body").animate({scrollTop:0}, 200);
+    });
+
+    $("#to_bottom").click(function() {
+      $("html,body").animate({scrollTop:document.body.clientHeight + 'px'}, 200);
+    });
+
+
+    $(document).scroll(function(){
+      switchJumpButton();
+    });
+
+    onOffJumpButton();      
+  });
+
+  window.onresize = function(){
+    onOffJumpButton(); 
+  };
+</script>
+</html>
